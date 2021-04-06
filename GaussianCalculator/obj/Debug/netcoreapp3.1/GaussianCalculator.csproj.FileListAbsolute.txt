@@ -1,0 +1,13 @@
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcoreapp3.1\GaussianCalculator.csprojAssemblyReference.cache
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcoreapp3.1\GaussianCalculator.AssemblyInfoInputs.cache
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcoreapp3.1\GaussianCalculator.AssemblyInfo.cs
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcoreapp3.1\GaussianCalculator.csproj.CoreCompileInputs.cache
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\bin\Debug\netcoreapp3.1\GaussianCalculator.exe
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\bin\Debug\netcoreapp3.1\GaussianCalculator.deps.json
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\bin\Debug\netcoreapp3.1\GaussianCalculator.runtimeconfig.json
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\bin\Debug\netcoreapp3.1\GaussianCalculator.runtimeconfig.dev.json
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\bin\Debug\netcoreapp3.1\GaussianCalculator.dll
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\bin\Debug\netcoreapp3.1\GaussianCalculator.pdb
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcoreapp3.1\GaussianCalculator.dll
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcoreapp3.1\GaussianCalculator.pdb
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcoreapp3.1\GaussianCalculator.genruntimeconfig.cache

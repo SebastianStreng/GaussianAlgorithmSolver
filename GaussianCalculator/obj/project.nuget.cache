@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "0d433z19w3meRs2Qm2GA76kNmkBv/p2YcHwEmxuYMh8Duwhg76kJPLOVDCzrEtrfmRpwv5FrjWrDITXHo6lx1Q==",
+  "dgSpecHash": "t8vWTYwYwNjllpC/RLVQeHtiSqwyjjhXXlqc+x6jFUgELtXEbyxwnJWXqyez+xKd1dHloB/Vjve+DuoW6UnvpA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sebas\\source\\repos\\GaussianAlgorithmSolver\\GaussianCalculator\\GaussianCalculator.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Tobi\\repos\\GaussianAlgorithmSolver\\GaussianCalculator\\GaussianCalculator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tobi\\.nuget\\packages\\mathnet.numerics\\4.15.0\\mathnet.numerics.4.15.0.nupkg.sha512"
+  ],
   "logs": []
 }

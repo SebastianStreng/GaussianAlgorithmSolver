@@ -7,22 +7,22 @@ namespace GaussianCalculator
 {
     class Matrix
     {
-        private double[] b;
-        internal readonly int rows, cols;
+        private double[] number;
+        internal readonly int rows, columns;
 
         internal Matrix(int rows, int cols)
         {
             this.rows = rows;
-            this.cols = cols;
-            b = new double[rows * cols];
+            this.columns = cols;
+            number = new double[rows * cols];
 
         }
 
         internal Matrix(int size)
         {
             this.rows = size;
-            this.cols = size;
-            b = new double[rows * cols];
+            this.columns = size;
+            number = new double[rows * columns];
             for (int i = 0; i < size; i++)
                 this[i, i] = 1;
         }
@@ -30,43 +30,32 @@ namespace GaussianCalculator
         internal Matrix(int rows, int cols, double[] initArray)
         {
             this.rows = rows;
-            this.cols = cols;
-            b = (double[])initArray.Clone();
-            if (b.Length != rows * cols) throw new Exception("bad init array");
+            this.columns = cols;
+            number = (double[])initArray.Clone();
+            if (number.Length != rows * cols) throw new Exception("bad init array");
         }
 
         internal double this[int row, int col]
         {
-            get { return b[row * cols + col]; }
-            set { b[row * cols + col] = value; }
+            get { return number[row * columns + col]; }
+            set { number[row * columns + col] = value; }
         }
 
-        public static Vector operator *(Matrix lhs, Vector rhs)
+        public static Vector operator *(Matrix leftHandSide, Vector rightHandSide)
         {
-            if (lhs.cols != rhs.rows) throw new Exception("I can't multiply matrix by vector");
-            Vector v = new Vector(lhs.rows);
-            for (int i = 0; i < lhs.rows; i++)
+            if (leftHandSide.columns != rightHandSide.rows) throw new Exception("I can't multiply matrix by vector");
+            Vector v = new Vector(leftHandSide.rows);
+            for (int i = 0; i < leftHandSide.rows; i++)
             {
                 double sum = 0;
-                for (int j = 0; j < rhs.rows; j++)
-                    sum += lhs[i, j] * rhs[j];
+                for (int j = 0; j < rightHandSide.rows; j++)
+                    sum += leftHandSide[i, j] * rightHandSide[j];
                 v[i] = sum;
             }
             return v;
         }
 
-        internal void SwapRows(int r1, int r2)
-        {
-            if (r1 == r2) return;
-            int firstR1 = r1 * cols;
-            int firstR2 = r2 * cols;
-            for (int i = 0; i < cols; i++)
-            {
-                double tmp = b[firstR1 + i];
-                b[firstR1 + i] = b[firstR2 + i];
-                b[firstR2 + i] = tmp;
-            }
-        }
+
 
         //with partial pivot
         internal void ElimPartial(Vector B)
@@ -82,10 +71,10 @@ namespace GaussianCalculator
                         max_row = row;
                         max_val = d;
                     }
-                SwapRows(diag, max_row);
+                MatrixExtentions.SwapRows(diag, max_row, columns, number);
                 B.SwapRows(diag, max_row);
                 double invd = 1 / this[diag, diag];
-                for (int col = diag; col < cols; col++)
+                for (int col = diag; col < columns; col++)
                     this[diag, col] *= invd;
                 B[diag] *= invd;
                 for (int row = 0; row < rows; row++)
@@ -93,7 +82,7 @@ namespace GaussianCalculator
                     d = this[row, diag];
                     if (row != diag)
                     {
-                        for (int col = diag; col < cols; col++)
+                        for (int col = diag; col < columns; col++)
                             this[row, col] -= d * this[diag, col];
                         B[row] -= d * B[diag];
                     }
@@ -105,7 +94,7 @@ namespace GaussianCalculator
         {
             for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < columns; j++)
                     Console.Write(this[i, j].ToString() + "  ");
                 Console.WriteLine();
             }

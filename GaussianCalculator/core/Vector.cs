@@ -6,39 +6,39 @@ namespace GaussianCalculator
 {
     internal class Vector
     {
-        private double[] b;
+        private double[] vectorNumbers;
         internal readonly int rows;
 
         internal Vector(int rows)
         {
             this.rows = rows;
-            b = new double[rows];
+            vectorNumbers = new double[rows];
         }
 
         internal Vector(double[] initArray)
         {
-            b = (double[])initArray.Clone();
-            rows = b.Length;
+            vectorNumbers = (double[])initArray.Clone();
+            rows = vectorNumbers.Length;
         }
 
         internal Vector Clone()
         {
-            Vector v = new Vector(b);
+            Vector v = new Vector(vectorNumbers);
             return v;
         }
 
         internal double this[int row]
         {
-            get { return b[row]; }
-            set { b[row] = value; }
+            get { return vectorNumbers[row]; }
+            set { vectorNumbers[row] = value; }
         }
 
         internal void SwapRows(int r1, int r2)
         {
             if (r1 == r2) return;
-            double tmp = b[r1];
-            b[r1] = b[r2];
-            b[r2] = tmp;
+            double tmp = vectorNumbers[r1];
+            vectorNumbers[r1] = vectorNumbers[r2];
+            vectorNumbers[r2] = tmp;
         }
 
         internal double norm(double[] weights)
@@ -46,7 +46,7 @@ namespace GaussianCalculator
             double sum = 0;
             for (int i = 0; i < rows; i++)
             {
-                double d = b[i] * weights[i];
+                double d = vectorNumbers[i] * weights[i];
                 sum += d * d;
             }
             return Math.Sqrt(sum);
@@ -55,7 +55,7 @@ namespace GaussianCalculator
         internal void print()
         {
             for (int i = 0; i < rows; i++)
-                Console.WriteLine(b[i]);
+                Console.WriteLine(vectorNumbers[i]);
             Console.WriteLine();
         }
 

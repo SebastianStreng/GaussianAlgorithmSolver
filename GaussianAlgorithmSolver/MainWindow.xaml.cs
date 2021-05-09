@@ -24,5 +24,20 @@ namespace GaussianAlgorithmSolver
         {
             InitializeComponent();
         }
+
+        private void btnEmpty_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAddRow_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSolve_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

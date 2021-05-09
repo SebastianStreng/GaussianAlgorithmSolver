@@ -5,15 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GaussianAlgorithmSolver"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <FlowDocumentReader>
-            <FlowDocument>
-                <Table>
-                    
-                </Table>
-            </FlowDocument>
-        </FlowDocumentReader>
-  
-    </Grid>
+        Title="Gauß Solver" Height="450" Width="800">
+    <DockPanel LastChildFill="True">
+        <GroupBox Header="Table" DockPanel.Dock="Left" Width="600">
+            <DataGrid Name="gaussGrid" VerticalAlignment="Stretch"/>
+        </GroupBox>
+        <GroupBox Header="Menu" DockPanel.Dock="Right">
+            <StackPanel>
+                <Button Name="btnEmpty" Height="25" Margin="3" Click="btnEmpty_Click">Empty Table 3x4</Button>
+                <Button Name="btnAddRow"  Height="25" Margin="3" Click="btnAddRow_Click">Add Row</Button>
+                <Button Name="btnSolve"  Height="25" Margin="3" Click="btnSolve_Click">Solve</Button>
+                <Separator></Separator>
+                <TextBlock>Step Interval (seconds):</TextBlock>
+                <TextBox x:Name="txtIntervall"></TextBox>
+            </StackPanel>
+        </GroupBox>
+        
+    </DockPanel>
+
 </Window>

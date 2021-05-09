@@ -26,3 +26,5 @@ C:\Users\Tobi\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcore
 C:\Users\Tobi\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcoreapp3.1\GaussianCalculator.dll
 C:\Users\Tobi\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcoreapp3.1\GaussianCalculator.pdb
 C:\Users\Tobi\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcoreapp3.1\GaussianCalculator.genruntimeconfig.cache
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\bin\Debug\netcoreapp3.1\MathNet.Numerics.dll
+C:\Users\sebas\source\repos\GaussianAlgorithmSolver\GaussianCalculator\obj\Debug\netcoreapp3.1\GaussianCalculator.csproj.CopyComplete

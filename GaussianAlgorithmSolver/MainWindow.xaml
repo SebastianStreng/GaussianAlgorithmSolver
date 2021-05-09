@@ -5,22 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GaussianAlgorithmSolver"
         mc:Ignorable="d"
-        Title="Gauß Solver" Height="450" Width="800">
+        Title="Gauß Solver" Height="224" Width="482" Icon="/matrix.png">
     <DockPanel LastChildFill="True">
-        <GroupBox Header="Table" DockPanel.Dock="Left" Width="600">
-            <DataGrid Name="gaussGrid" VerticalAlignment="Stretch"/>
+        <GroupBox Header="Table" DockPanel.Dock="Left" Width="300">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+
+                <TextBox x:Name="txt11" Grid.Row="0" Grid.Column="0" Text="{Binding Path=v11, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt12" Grid.Row="0" Grid.Column="1" Text="{Binding Path=v12, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt13" Grid.Row="0" Grid.Column="2" Text="{Binding Path=v13, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt14" Grid.Row="0" Grid.Column="3" Text="{Binding Path=v14, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt15" Grid.Row="0" Grid.Column="4" Text="{Binding Path=v15, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+
+                <TextBox x:Name="txt21" Grid.Row="1" Grid.Column="0" Text="{Binding Path=v21, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt22" Grid.Row="1" Grid.Column="1" Text="{Binding Path=v22, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt23" Grid.Row="1" Grid.Column="2" Text="{Binding Path=v23, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt24" Grid.Row="1" Grid.Column="3" Text="{Binding Path=v24, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt25" Grid.Row="1" Grid.Column="4" Text="{Binding Path=v25, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+
+                <TextBox x:Name="txt31" Grid.Row="2" Grid.Column="0" Text="{Binding Path=v31, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt32" Grid.Row="2" Grid.Column="1" Text="{Binding Path=v32, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt33" Grid.Row="2" Grid.Column="2" Text="{Binding Path=v33, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt34" Grid.Row="2" Grid.Column="3" Text="{Binding Path=v34, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt35" Grid.Row="2" Grid.Column="4" Text="{Binding Path=v35, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+
+                <TextBox x:Name="txt41" Grid.Row="3" Grid.Column="0" Text="{Binding Path=v41, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt42" Grid.Row="3" Grid.Column="1" Text="{Binding Path=v42, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt43" Grid.Row="3" Grid.Column="2" Text="{Binding Path=v43, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt44" Grid.Row="3" Grid.Column="3" Text="{Binding Path=v44, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <TextBox x:Name="txt45" Grid.Row="3" Grid.Column="4" Text="{Binding Path=v45, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=500, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+
+            </Grid>
+
         </GroupBox>
         <GroupBox Header="Menu" DockPanel.Dock="Right">
             <StackPanel>
-                <Button Name="btnEmpty" Height="25" Margin="3" Click="btnEmpty_Click">Empty Table 3x4</Button>
-                <Button Name="btnAddRow"  Height="25" Margin="3" Click="btnAddRow_Click">Add Row</Button>
+                <Button Name="btnRandom" Height="25" Margin="3" Click="btnRandom_Click">Random</Button>
                 <Button Name="btnSolve"  Height="25" Margin="3" Click="btnSolve_Click">Solve</Button>
                 <Separator></Separator>
-                <TextBlock>Step Interval (seconds):</TextBlock>
-                <TextBox x:Name="txtIntervall"></TextBox>
+                <TextBlock>Step Interval (Milliseconds):</TextBlock>
+                <TextBox x:Name="txtIntervall" Text="500"></TextBox>
             </StackPanel>
         </GroupBox>
-        
+
     </DockPanel>
 
 </Window>

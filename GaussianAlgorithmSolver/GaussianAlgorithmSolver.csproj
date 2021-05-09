@@ -4,6 +4,19 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>matrix.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="matrix.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GaussianCalculator\GaussianCalculator.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="matrix.png" />
+  </ItemGroup>
 
 </Project>

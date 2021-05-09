@@ -27,17 +27,17 @@ namespace GaussianCalculator
 
             var system = new LinearEquationSystem(A, B);
 
-            var solution = system.SolveGauss();
+            //var solution = system.SolveGauss(TimeSpan.FromMilliseconds(500));
 
-            foreach (var row in solution.Matrix.EnumerateRows())
-            {
-                Console.WriteLine(string.Join(", ", row));
-            }
+            //foreach (var row in solution.Matrix.EnumerateRows())
+            //{
+            //    Console.WriteLine(string.Join(", ", row));
+            //}
 
-            foreach (var row in solution.Vector)
-            {
-                Console.WriteLine(string.Join(", ", row));
-            }
+            //foreach (var row in solution.Vector)
+            //{
+            //    Console.WriteLine(string.Join(", ", row));
+            //}
         }
     }
 }

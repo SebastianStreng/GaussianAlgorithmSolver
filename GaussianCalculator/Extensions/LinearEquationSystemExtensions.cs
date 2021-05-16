@@ -8,16 +8,16 @@ using MathNet.Numerics.LinearAlgebra.Double;
 
 namespace GaussianCalculator.Extensions
 {
-    public static class LinearEquationSystemExtensions { 
-
+    public static class LinearEquationSystemExtensions
+    {
         public static LinearEquationSystem AddRow(this LinearEquationSystem system)
         {
             var rowCount = system.Matrix.RowCount;
-            var vector = Enumerable.Repeat(0.0,  rowCount + 1);
+            var vector = Enumerable.Repeat(0.0, rowCount + 1);
 
             //Add Column
             system.Matrix = system.Matrix.InsertColumn(system.Matrix.ColumnCount, Vector.Build.DenseOfEnumerable(vector));
-            
+
             //Add Row
             system.Matrix = system.Matrix.InsertRow(system.Matrix.ColumnCount, Vector.Build.DenseOfEnumerable(vector));
 
@@ -39,8 +39,10 @@ namespace GaussianCalculator.Extensions
             var rows = system.Matrix.RowCount;
             var cols = system.Matrix.ColumnCount;
 
+            //Für jede Reihe, betrachte Diagonalwert
             for (int diag = 0; diag < rows; diag++)
             {
+                //Suche Reihe mit höchstem Wert in der Spalte, die den Diagonalwert enthält
                 int highestValueRow = diag;
                 double highestValue = Math.Abs(system.Matrix[diag, diag]);
 
@@ -55,19 +57,24 @@ namespace GaussianCalculator.Extensions
                     }
                 }
 
+                //Tausche Reihen, sodass Reihe mit höchstem Wert jetzt in der Reihe der aktuellen Diagonale ist.
                 system.Matrix = system.Matrix.SwapRows(diag, highestValueRow);
                 system.Vector = system.Vector.SwapRows(diag, highestValueRow);
 
-                double divider = 1 / system.Matrix[diag, diag];
+                //*Haltepunkt* -> Reihen werden vertauscht
+                await WaitAndRefreshDisplay();
 
+                //Teile jeden Wert in der Reihe durch den Diagonalwert, sodass eine 1 entsteht
+                double divider = 1 / system.Matrix[diag, diag];
                 for (int col = 0; col < cols; col++)
                 {
                     system.Matrix[diag, col] *= divider;
-                    system.Vector[diag] *= divider;
-                    onPropertyChanged?.Invoke();
-                    await Task.Delay(delayPerStep);
+                    //*Haltepunkt* -> Jeder Wert der Reihe wird durch Diagonalwert geteilt
+                    await WaitAndRefreshDisplay();
                 }
+                system.Vector[diag] *= divider;
 
+                //Ziehe diese Reihe von jeder Folgenden so oft ab, dass in der Spalte eine 0 entsteht
                 for (int row = 0; row < rows; row++)
                 {
                     d = system.Matrix[row, diag];
@@ -78,13 +85,21 @@ namespace GaussianCalculator.Extensions
                             system.Matrix[row, col] -= d * system.Matrix[diag, col];
                         }
                         system.Vector[row] -= d * system.Vector[diag];
-                        onPropertyChanged?.Invoke();
-                        await Task.Delay(delayPerStep);
+
+                        //*Haltepunkt* -> Nullen werden erzeugt
+                        await WaitAndRefreshDisplay();
                     }
                 }
             }
 
             return system;
+
+            //Aktualisiere Matrix in User-Oberfläche und warte kurz
+            async Task WaitAndRefreshDisplay()
+            {
+                await Task.Delay(delayPerStep);
+                onPropertyChanged?.Invoke();
+            }
         }
     }
 }
